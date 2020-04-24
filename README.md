@@ -6,6 +6,9 @@ Add certificates:
 * raddb/certs/server.key
 * raddb/certs/server.pem
 
+Client certificates are verified against ca.pem, which can contain more than one CA.
+
+
 ## Run using Docker
 
 Build the docker container
