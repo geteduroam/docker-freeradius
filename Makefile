@@ -1,5 +1,5 @@
 
-debug:
+debug: build
 	docker run -t make-freeradius -X
 
 certs:
@@ -10,7 +10,7 @@ certs:
 build: certs
 	docker build . -t make-freeradius
 
-run:
+run: build
 	docker run -t make-freeradius
 
 .PHONY: build debug run certs
