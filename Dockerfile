@@ -43,7 +43,10 @@ RUN stat -c %n \
 	/etc/raddb/certs/server.key \
 	/etc/raddb/certs/server.pem
 
+RUN sed -i -e '/^proxy_requests[[:space:]]\s/ s/yes/no/' radiusd.conf
+
 COPY raddb/clients.conf /etc/raddb/clients.conf
+COPY raddb/proxy.conf /etc/raddb/proxy.conf
 
 # We just put the available mods directly in enabled
 # so we can skip the symlink step
